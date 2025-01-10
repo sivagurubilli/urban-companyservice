@@ -1,0 +1,489 @@
+doctype html
+html
+  head
+    title Invoice
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+style.
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      main,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+
+      html {
+        line-height: 1;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      caption,
+      th,
+      td {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: middle;
+      }
+
+      q,
+      blockquote {
+        quotes: none;
+      }
+
+      q:before,
+      q:after,
+      blockquote:before,
+      blockquote:after {
+        content: "";
+        content: none;
+      }
+
+      a img {
+        border: none;
+      }
+
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+
+      .clearfix {
+        display: block;
+        clear: both;
+      }
+
+      .right-invoice {
+        padding: 40px 30px 40px 37px;
+        min-height: 1078px;
+      }
+
+      #memo .company-info {
+        float: left;
+      }
+
+      #memo .company-info div {
+        font-size: 28px;
+        text-transform: uppercase;
+        min-width: 20px;
+        line-height: 1em;
+      }
+
+      #memo .company-info span {
+        font-size: 12px;
+        color: #858585;
+        display: inline-block;
+        min-width: 20px;
+      }
+
+      #memo .logo {
+        float: right;
+        margin-left: 15px;
+      }
+
+      #memo .logo img {
+        width: 100%;
+        height: 10%;
+      }
+
+      #memo:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      #invoice-title-number {
+        margin: 50px 0 20px 0;
+        display: inline-block;
+        float: left;
+      }
+
+      #invoice-title-number .title-top {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      #invoice-title-number .title-top span {
+        display: inline-block;
+        min-width: 20px;
+      }
+
+      #invoice-title-number .title-top #number {
+        text-align: right;
+        float: right;
+        color: #858585;
+      }
+
+      #invoice-title-number .title-top:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      #invoice-title-number #title {
+        display: inline-block;
+        background: #145388;
+        color: white;
+        font-size: 50px;
+        padding: 7px;
+        font-family: Sanchez, Serif;
+        line-height: 1em;
+      }
+
+      #client-info {
+        float: right;
+        text-align: right;
+        margin-top: 50px;
+        min-width: 220px;
+      }
+
+      #client-info .client-name {
+        font-weight: bold;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin: 7px 0;
+      }
+
+      #client-info>div {
+        margin-bottom: 3px;
+        min-width: 20px;
+      }
+
+      #client-info span {
+        display: block;
+        min-width: 20px;
+      }
+
+      #client-info>span {
+        text-transform: uppercase;
+        color: #858585;
+        font-size: 15px;
+      }
+
+      table {
+        table-layout: fixed;
+      }
+
+      table th,
+      table td {
+        vertical-align: top;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .currency {
+        margin-top: 20px;
+        text-align: right;
+        color: #858585;
+        font-style: italic;
+        font-size: 12px;
+      }
+
+      .currency span {
+        display: inline-block;
+        min-width: 20px;
+      }
+
+      #items {
+        margin-top: 10px;
+      }
+
+      #items .first-cell,
+      #items table th:first-child,
+      #items table td:first-child {
+        min-width: 100px;
+        text-align: left;
+      }
+
+      #items table {
+        border-collapse: separate;
+        width: 100%;
+      }
+
+      #items table th {
+        font-family: Sanchez, Serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 5px 3px;
+        text-align: right;
+        background: #b0b4b3;
+        color: white;
+      }
+
+      #items table th:nth-child(2) {
+        width: 30%;
+        text-align: left;
+      }
+
+      #items table th:last-child {
+        text-align: right;
+      }
+
+      #items table td {
+        padding: 10px 3px;
+        text-align: right;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #items table td:first-child {
+        text-align: left;
+      }
+
+      #items table td:nth-child(2) {
+        text-align: left;
+      }
+
+      #sums {
+        float: right;
+        margin-top: 30px;
+      }
+
+      #sums table tr th,
+      #sums table tr td {
+        min-width: 100px;
+        padding: 8px 3px;
+        text-align: right;
+      }
+
+      #sums table tr th {
+        padding-right: 25px;
+      }
+
+      #sums table tr.amount-total td {
+        background: #145388;
+        color: white;
+        font-family: Sanchez, Serif;
+        font-size: 35px;
+        line-height: 1em;
+        padding: 7px !important;
+      }
+
+      #sums table tr.due-amount th,
+      #sums table tr.due-amount td {
+        font-weight: bold;
+      }
+
+      #terms {
+        margin-top: 60px;
+      }
+
+      #terms>span {
+        font-weight: bold;
+        display: inline-block;
+        min-width: 20px;
+        text-transform: uppercase;
+      }
+
+      #terms>div {
+        min-height: 50px;
+        min-width: 50px;
+      }
+   
+
+body
+    #container
+      h3(style='text-align:center;font-size:40px;margin-top: 20px;padding-top: 40px;')
+        u INVOICE
+      .right-invoice
+        section#memo
+          .company-info
+            img(src='http://127.0.0.1:3004/assets/logos/logo.png', width='50%', height='10%')
+            br
+            span #{companyName}
+            br
+            span #{companyAddress}
+            br
+            span #{companyZipCode}
+            br
+            span GST No: #{companyGst}
+            br
+            span Phone: #{mobileNo}
+            br
+            span E-mail: #{companyMail}
+
+        section#invoice-title-number
+          .title-top
+            span Invoice # : #{invoiceNumber}
+            br
+            span Date : #{invoiceDate}
+
+        section#client-info
+          span Bill to
+          .client-name
+            span #{name}
+
+          div
+            span #{address.doorNumber}
+            br
+            span #{address.streetName}
+            br
+
+          div
+            span #{address.city}
+            span #{address.state}
+            span #{address.pincode}
+
+        .clearfix
+        .clearfix
+
+        .currency
+          span Service Details
+
+        section#items
+          table(cellpadding='0', cellspacing='0')
+            tr
+              th Service Name
+              th Price per hour
+              th Gst percent
+              th Gst Amount
+              th Final Amount
+            if bookingsdetails.length > 1
+              each el, index in bookingsdetails
+                tr(key=index)
+                  td= el.serviceId.name
+                  td= el.serviceId.pricePerHour
+                  td= el.serviceId.gstPercent
+                  td= el.gstAmount
+                  td= el.finalPrice
+            else
+              tr
+                td= bookingsdetails[0] ? bookingsdetails[0].serviceId.name : ''
+                td= bookingsdetails[0] ? bookingsdetails[0].serviceId.pricePerHour : ''
+                td= bookingsdetails[0] ? bookingsdetails[0].serviceId.gstPercent : ''
+                td= bookingsdetails[0] ? bookingsdetails[0].gstAmount : ''
+                td= bookingsdetails[0] ? bookingsdetails[0].finalPrice : ''
+        
+        .currency
+          span All Prices are in
+          span INR
+        section#items
+          table(cellpadding='0', cellspacing='0')
+            tr
+              th Total Price
+              th Discount
+              th Gst percent
+              th Gst amount
+              th Price
+            tr(data-iterate='item')
+              td= totalPrice
+              td= discount
+              td= gstPercent
+              td= gstAmount
+              td= Price
+
+        section#sums
+          table(cellpadding='0', cellspacing='0')
+            tr
+              th Subtotal
+              td= Price
+            tr(data-iterate='tax')
+              th Paid
+              td= Price
+
+        .clearfix
+
+        section#terms
+          span Terms
+          div Thank you very much. We really appreciate your business.
